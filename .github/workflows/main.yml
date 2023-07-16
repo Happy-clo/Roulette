@@ -26,5 +26,5 @@ jobs:
     - name: upload Jar
       uses: actions/upload-artifact@v3
       with:
-       name: MMOCore
+       name: Roulette
        path: target/*.jar
