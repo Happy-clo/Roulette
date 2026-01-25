@@ -6,7 +6,7 @@
 
     <groupId>me.matsubara</groupId>
     <artifactId>Roulette</artifactId>
-    <version>3.2.3.2</version>
+    <version>3.2.3.3</version>
     <packaging>jar</packaging>
 
     <name>Roulette</name>
@@ -52,6 +52,10 @@
                         <relocation>
                             <pattern>fr.skytasul</pattern>
                             <shadedPattern>me.matsubara.roulette.util.glowingentities</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>me.matsubara.roulette.util.bstats</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>
@@ -263,6 +267,12 @@
             <groupId>fr.skytasul</groupId>
             <artifactId>glowingentities</artifactId>
             <version>1.4.10</version>
+        </dependency>
+        <!-- bStats -->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 </project>

@@ -38,6 +38,7 @@ import me.matsubara.roulette.util.ItemBuilder;
 import me.matsubara.roulette.util.PluginUtils;
 import me.matsubara.roulette.util.config.ConfigFileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.*;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.ConfigurationSection;
@@ -115,6 +116,7 @@ public final class RoulettePlugin extends JavaPlugin {
             "sessions-menu",
             "session-result-menu",
             "table-menu");
+    private static final int BSTATS_ID = 29049;
 
     public static final ItemStack EMPTY_ITEM = new ItemStack(Material.AIR);
     public NamespacedKey itemIdKey = new NamespacedKey(this, "ItemID");
@@ -167,6 +169,9 @@ public final class RoulettePlugin extends JavaPlugin {
                 return;
             }
         }
+
+        // Enable bStats.
+        new Metrics(this, BSTATS_ID);
 
         // Register protocol events.
         EventManager eventManager = PacketEvents.getAPI().getEventManager();
